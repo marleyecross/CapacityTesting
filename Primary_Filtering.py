@@ -15,7 +15,8 @@ config_filters = config_data.filter(['Lower Bound RC', 'Upper Bound RC', 'Lower 
 config_filters['AC Clipping'] = config_data['Project AC Size']*.98
 config_filters.head()
 
-# Helper Functions:
+
+# Helper Function for Irradiance Filtering:
 
 def unstable_irr (irr_data):
     """
@@ -32,7 +33,8 @@ def unstable_irr (irr_data):
             unstable_irr.append(0)
     return unstable_irr
 
-# TO DO: primary filtering
+# Primary Data Filtering:
+
 def primary_filtering_m(meas_data, config):
     """
     takes in a pandas dataframe of measured data
